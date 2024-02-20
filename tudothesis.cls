@@ -77,6 +77,29 @@
 \newcommand\firstcorrector[1]{\renewcommand\thefirstcorrector{#1}}
 \newcommand\secondcorrector[1]{\renewcommand\thesecondcorrector{#1}}
 
+% individual commands for easier writing
+\newcommand{\cobalt}{\text{Co}^{60}_{27}}
+\newcommand{\nickel}{\text{Ni}^{60}_{28}}
+\newcommand*{\inlineequation}[2][]{%
+  \begingroup
+    % Put \refstepcounter at the beginning, because
+    % package `hyperref' sets the anchor here.
+    \refstepcounter{equation}%
+    \ifx\\#1\\%
+    \else
+      \label{#1}%
+    \fi
+    % prevent line breaks inside equation
+    \relpenalty=10000 %
+    \binoppenalty=10000 %
+    \ensuremath{%
+      % \displaystyle % larger fractions, ...
+      #2%
+    }%
+    ~\@eqnnum
+  \endgroup
+}
+
 % set title page elements
 \subject{Summary of the following course from winter semester 2023/2024 \\ \thesisclass}
 \publishers{\thechair \\ \thedivision \\ University Dortmund}
