@@ -77,6 +77,11 @@
 \newcommand\firstcorrector[1]{\renewcommand\thefirstcorrector{#1}}
 \newcommand\secondcorrector[1]{\renewcommand\thesecondcorrector{#1}}
 
+\renewcommand*\mainmatter{%
+  \clearpage
+  \@mainmattertrue\pagenumbering{arabic}%
+}
+
 % individual commands for easier writing
 \newcommand{\cobalt}{\text{Co}^{60}_{27}}
 \newcommand{\nickel}{\text{Ni}^{60}_{28}}
@@ -101,7 +106,7 @@
 }
 
 % set title page elements
-\subject{Summary of the following course from winter semester 2023/2024 \\ \thesisclass}
+\subject{Course Summary from Winter Semester 2023/2024 \\ \thesisclass}
 \publishers{\thechair \\ \thedivision \\ University Dortmund}
 
 % page for the correctors
